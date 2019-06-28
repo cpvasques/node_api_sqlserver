@@ -1,5 +1,5 @@
 const sql = require('mssql'); 
-const connStr = "Server=SPIN033\\SQLEXPRESS;Database=Node_Api;User Id=sa;Password=spi@ti;";
+const connStr = "Server=IP_ADDRESS;Database=DATA_BASE_NAME;User Id=USER;Password=PASS;";
 
 function conectar(callback){
     sql.connect(connStr)    
