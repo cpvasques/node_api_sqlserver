@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="/css/bootstrap.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <table class="table table-bordered table-striped table-hover">
+    <tr>
+      <td>Nome</td>
+      <td>Espaço</td>
+      <td>Editar</td>
+      <td>Excluir</td>
+    </tr>
+    <%
+      naves.forEach(function (item){
+        %>
+        <tr>
+          <td><%= item.nome %></td>
+          <td><%= item.espaco %></td>
+          <td><a href="/editar/<%= item._id %>" class="btn btn-warning">Editar</a></td>
+          <td><a href="/delete/<%= item._id %>" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja excluir <%= item.nome %>?')">Excluir</a></td>
+        <tr>
+        <%
+      })
+    %>
+    </table>
+    <a class="btn btn-primary" href="/new">Cadastrar Novo</a>
+
+
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>
